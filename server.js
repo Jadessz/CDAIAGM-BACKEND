@@ -82,7 +82,8 @@ app.get('/profile', (req, res) => {
 
 app.get('/logout', (req, res) => {
   req.logout(() => {
-    res.redirect('https://cdaiagm.netlify.app/index.html');
+    res.clearCookie('connect.sid', { path: '/' });
+    res.json({ success: true, message: 'Logged out' });
   });
 });
 
