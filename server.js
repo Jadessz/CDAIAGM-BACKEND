@@ -67,7 +67,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
     // Successful authentication, redirect to frontend
-    res.redirect('http://localhost:5500/index.html');
+    res.redirect('https://cdaiagm.netlify.app/index.html');
   }
 );
 
@@ -80,7 +80,7 @@ app.get('/profile', (req, res) => {
 
 app.get('/logout', (req, res) => {
   req.logout(() => {
-    res.redirect('http://localhost:5500/index.html');
+    res.redirect('https://cdaiagm.netlify.app/index.html');
   });
 });
 
@@ -107,4 +107,4 @@ app.post('/auth/google/token', async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Server started on http://localhost:3000'));
+app.listen(3000, () => console.log('Server started on https://cdaiagm.netlify.app'));
