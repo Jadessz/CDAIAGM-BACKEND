@@ -22,6 +22,8 @@ app.use((req, res, next) => {
   }
 });
 
+app.set('trust proxy', 1);
+
 // Session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET,
