@@ -24,13 +24,13 @@ app.use((req, res, next) => {
 
 // Session middleware
 app.use(session({
-  secret: 'your-secret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    secure: false, // Set to true if using HTTPS
-    sameSite: 'lax'
+    secure: true, // must be true for HTTPS
+    sameSite: 'none' // must be 'none' for cross-site cookies
   }
 }));
 
